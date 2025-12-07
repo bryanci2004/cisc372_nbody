@@ -104,7 +104,6 @@ extern "C" void compute()
     int n = NUMENTITIES;
 
     if (d_pos == NULL) {
-        d_n = n;
 
         cudaMalloc(&d_pos,  sizeof(vector3) * n);
         cudaMalloc(&d_vel,  sizeof(vector3) * n);
