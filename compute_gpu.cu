@@ -8,10 +8,10 @@ extern "C" {
 #define BLOCK_X 16
 #define BLOCK_Y 16
 
-static vector3 *d_pos  = nullptr;
-static vector3 *d_vel  = nullptr;
-static vector3 *d_acc  = nullptr;
-static double  *d_mass = nullptr;
+static vector3 *d_pos  = NULL;
+static vector3 *d_vel  = NULL;
+static vector3 *d_acc  = NULL;
+static double  *d_mass = NULL;
 static int      d_n    = 0;
 
 __global__ void kernel_pairwise(const vector3 *pos,
@@ -104,7 +104,7 @@ extern "C" void compute()
 {
     int n = NUMENTITIES;
 
-    if (d_pos == nullptr) {
+    if (d_pos == NULL) {
         d_n = n;
 
         cudaMalloc(&d_pos,  sizeof(vector3) * n);
