@@ -12,7 +12,6 @@ static vector3 *d_pos  = NULL;
 static vector3 *d_vel  = NULL;
 static vector3 *d_acc  = NULL;
 static double  *d_mass = NULL;
-static int      d_n    = 0;
 
 __global__ void kernel_pairwise(const vector3 *pos,
                                 const double  *mass,
